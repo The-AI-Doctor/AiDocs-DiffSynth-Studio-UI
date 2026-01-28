@@ -1,0 +1,30 @@
+{
+  "name": "template_lora",
+  "model_reasoning": {
+    "base_model": "Z-Image-i2L",
+    "model_type": "image-to-lora",
+    "workflow": "Image to LoRA",
+    "description": "Z-Image-i2L (Image to LoRA) converts reference style images into a LoRA model that can be used for text-to-image generation. Upload 3-4 images showing a consistent style, and the model will generate a LoRA adapter that captures that style for use with the Z-Image text-to-image model."
+  },
+  "image_to_lora": {
+    "num_reference_images": "2+ (no fixed limit)",
+    "recommended_images": "Upload 2+ images that showcase a consistent style or visual characteristic. More images generally capture the style better!",
+    "image_processing": {
+      "size": "Will be auto-resized",
+      "format": "jpg, png, webp"
+    },
+    "explanation": "The i2L pipeline encodes reference images into a LoRA representation that captures their visual style"
+  },
+  "inference": {
+    "cfg_scale": 4,
+    "sigma_shift": 8,
+    "num_inference_steps": 50,
+    "positive_only_lora": true,
+    "negative_prompt_chinese": "泛黄，发绿，模糊，低分辨率，低质量图像，扭曲的肢体，诡异的外观，丑陋，AI感，噪点，网格感，JPEG压缩条纹，异常的肢体，水印，乱码，意义不明的字符",
+    "negative_prompt_english": "Yellowed, green-tinted, blurry, low-resolution, low-quality image, distorted limbs, eerie appearance, ugly, AI-looking, noise, grid-like artifacts, JPEG compression artifacts, abnormal limbs, watermark, garbled text, meaningless characters",
+    "explanation": "- cfg_scale: Set to 4 (recommended for i2L, not standard 7.5) for optimal quality\n- sigma_shift: Set to 8 (recommended for i2L) to enhance style retention\n- num_inference_steps: Denoising steps (50 recommended)\n- positive_only_lora: Apply LoRA only to positive prompts, disable on negative prompts for better quality\n- negative_prompt: Use provided Chinese or English prompts to improve image quality"
+  },
+  "training": {
+    "note": "Z-Image-i2L does not use traditional LoRA training. Instead, it generates LoRA from reference images in a single forward pass."
+  }
+}

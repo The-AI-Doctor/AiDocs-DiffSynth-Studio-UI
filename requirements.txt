@@ -1,0 +1,17 @@
+gradio>=4.27.0
+torch>=2.2.0
+torchvision>=0.17.0
+torchaudio>=2.2.0
+diffsynth>=0.2.0
+modelscope>=1.13.2
+peft>=0.7.1
+transformers>=4.35.2
+pillow>=10.1.0
+numpy>=1.24.3
+pyyaml>=6.0.1
+opencv-python>=4.8.1.78
+einops>=0.7.0
+pydantic>=2.5.0
+requests>=2.31.0
+tqdm>=4.66.1
+safetensors>=0.4.0
