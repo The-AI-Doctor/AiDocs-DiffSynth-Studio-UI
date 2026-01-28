@@ -46,15 +46,6 @@ A comprehensive Gradio-based web interface for managing DiffSynth-Studio models 
 run.bat
 ```
 
-#### Linux/macOS
-```bash
-# Make script executable
-chmod +x run.sh
-
-# Run the launcher
-./run.sh
-```
-
 #### Manual Setup
 ```bash
 # Install dependencies
